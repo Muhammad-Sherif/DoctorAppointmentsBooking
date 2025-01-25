@@ -53,6 +53,11 @@ A **modular monolith backend system** for managing a single doctor's appointment
 
 ---
 
+## Modules Interactions  
+![image](https://github.com/user-attachments/assets/32b5e13c-948f-451f-b4bb-1a2442a4eb51)
+
+---
+
 ## Key Features  
 - **Modular Monolith**: Independent modules with clear boundaries.  
 - **Architectural Diversity**: Demonstrates layered, clean, hexagonal, and minimalistic designs.  
