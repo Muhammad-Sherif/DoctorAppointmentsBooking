@@ -38,7 +38,7 @@ A **modular monolith backend system** for managing a single doctor's appointment
 - **Update Status**: Mark as completed or canceled.  
 
 ### 💾 Data Persistence  
-- Supports **in-memory storage** or **database engines**.  
+-  **Postgress**.  
 
 ---
 
