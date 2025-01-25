@@ -1,37 +1,60 @@
-📋 Project Overview
-This project is a modular monolith backend system for a doctor appointment booking application, designed to manage a single doctor's availability, patient bookings, appointment confirmations, and appointment management. The system emphasizes modular architecture by implementing four distinct architectural patterns across its modules, as per the business requirements.
+# Doctor Appointment Booking System  
 
-🎯 Business Requirements Summary
-Doctor Availability
-List and add time slots with properties:
-Id, Time, DoctorId, DoctorName, IsReserved, Cost.
+## Project Overview  
+A **modular monolith backend system** for managing a single doctor's appointment lifecycle:  
+- Handles **availability**, **booking**, **confirmation**, and **management** of appointments.  
+- Implements **four distinct architectural patterns** across modules to meet business requirements.  
 
-Slots are non-reserved by default.
+---
 
-Appointment Booking
-Patients can view all available slots (unreserved).
+## Business Requirements  
 
-Book appointments with properties:
-Id, SlotId, PatientId, PatientName, ReservedAt.
+### 🩺 Doctor Availability  
+- **List/Create Time Slots** with properties:  
+  - `Id` (Guid)  
+  - `Time` (DateTime, e.g., *22/02/2023 04:30 pm*)  
+  - `DoctorId` (Guid)  
+  - `DoctorName` (string)  
+  - `IsReserved` (bool, default: `false`)  
+  - `Cost` (Decimal)  
 
-Appointment Confirmation
-Send confirmation notifications (via log messages) containing:
-Patient name, appointment time, and doctor name.
+### 📅 Appointment Booking  
+- **View Available Slots** (unreserved only).  
+- **Book Appointments** with properties:  
+  - `Id` (Guid)  
+  - `SlotId` (Guid)  
+  - `PatientId` (Guid)  
+  - `PatientName` (string)  
+  - `ReservedAt` (DateTime)  
 
-Doctor Appointment Management
-View upcoming appointments.
+### ✅ Appointment Confirmation  
+- **Log Confirmation Notifications** with:  
+  - Patient name  
+  - Appointment time  
+  - Doctor name  
 
-Mark appointments as completed or cancel them.
+### 🗂️ Doctor Appointment Management  
+- **View Upcoming Appointments**.  
+- **Update Status**: Mark as completed or canceled.  
 
-Data Persistence
-Flexible storage (in-memory or database).
+### 💾 Data Persistence  
+- Supports **in-memory storage** or **database engines**.  
 
-🏗️ Architectural Approach
-The system is divided into four modules, each adhering to a specific architecture:
+---
 
-Module	Architecture	Key Focus
-Doctor Availability	Traditional Layered	Separation of concerns (Presentation, Business, Data layers).
-Appointment Booking	Clean Architecture	Decoupled layers with dependency inversion (Domain, Application, Infrastructure).
-Appointment Confirmation	Simplest Architecture	Minimalist design (single module/service for logging).
-Appointment Management	Hexagonal (Ports & Adapters)	Isolation of business logic from external systems (APIs, DB).
-🧩
+## Architecture  
+
+| Module                   | Architecture                  | Key Characteristics                              |  
+|--------------------------|-------------------------------|--------------------------------------------------|  
+| **Doctor Availability**  | Traditional Layered           | Separated into Presentation, Business, Data layers. |  
+| **Appointment Booking**  | Clean Architecture            | Domain-centric with decoupled layers (Domain, Application, Infrastructure). |  
+| **Appointment Confirmation** | Simplest Architecture     | Single logging service (e.g., `Console.WriteLine`). |  
+| **Appointment Management** | Hexagonal (Ports & Adapters) | Core logic isolated via ports (interfaces) and adapters (implementations). |  
+
+---
+
+## Key Features  
+- **Modular Monolith**: Independent modules with clear boundaries.  
+- **Architectural Diversity**: Demonstrates layered, clean, hexagonal, and minimalistic designs.  
+- **Event-Driven Confirmation**: Log-based notifications triggered by booking events.  
+
