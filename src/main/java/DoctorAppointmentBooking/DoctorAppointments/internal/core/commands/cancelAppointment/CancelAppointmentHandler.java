@@ -27,6 +27,8 @@ public class CancelAppointmentHandler implements INoReturnCommandHandler<CancelA
             throw new BusinessRuleException("Appointment not found");
         }
 
+        doctorAppointmentRepository.update(optionalDoctorAppointment.get());
+
     }
 }
 

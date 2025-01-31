@@ -26,6 +26,7 @@ public class CompleteAppointmentHandler implements INoReturnCommandHandler<Compl
         else {
             throw new BusinessRuleException("Appointment not found");
         }
+        doctorAppointmentRepository.update(optionalDoctorAppointment.get());
 
     }
 }

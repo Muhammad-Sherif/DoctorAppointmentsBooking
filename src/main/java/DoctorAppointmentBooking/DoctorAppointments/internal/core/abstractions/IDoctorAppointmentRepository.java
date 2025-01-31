@@ -12,4 +12,7 @@ public interface IDoctorAppointmentRepository {
     void save(DoctorAppointment doctorAppointment);
 
     Optional<DoctorAppointment> getById(UUID id);
+
+    void update(DoctorAppointment doctorAppointment);
+
 }

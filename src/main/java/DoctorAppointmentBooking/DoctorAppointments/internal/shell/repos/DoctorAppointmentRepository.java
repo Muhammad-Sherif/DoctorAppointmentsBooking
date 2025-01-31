@@ -37,4 +37,11 @@ public class DoctorAppointmentRepository implements IDoctorAppointmentRepository
 
     }
 
+    @Override
+    public void update(DoctorAppointment doctorAppointment) {
+        DoctorAppointmentEntity doctorAppointmentEntity = doctorAppointmentEntityRepository.getReferenceById(doctorAppointment.getId());
+        DoctorAppointmentMapper.toEntity(doctorAppointment,doctorAppointmentEntity);
+        doctorAppointmentEntityRepository.save(doctorAppointmentEntity);
+    }
+
 }

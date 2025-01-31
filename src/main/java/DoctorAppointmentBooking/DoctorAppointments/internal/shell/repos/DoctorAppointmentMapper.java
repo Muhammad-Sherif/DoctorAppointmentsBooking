@@ -82,4 +82,19 @@ public class DoctorAppointmentMapper {
         }
         return Optional.empty();
     }
+
+    public static void toEntity(DoctorAppointment doctorAppointment, DoctorAppointmentEntity entity) {
+
+        entity.setAppointmentId(doctorAppointment.getAppointment().getPatientId());
+        entity.setSlotId(doctorAppointment.getAppointment().getSlotId());
+        entity.setDoctorId(doctorAppointment.getDoctor().getDoctorId());
+        entity.setDoctorName(doctorAppointment.getDoctor().getDoctorName());
+        entity.setPatientId(doctorAppointment.getAppointment().getPatientId());
+        entity.setPatientName(doctorAppointment.getAppointment().getPatientName());
+        entity.setDate(doctorAppointment.getAppointment().getDate());
+        entity.setStartTime(doctorAppointment.getAppointment().getStartTime());
+        entity.setEndTime(doctorAppointment.getAppointment().getEndTime());
+        entity.setStatus(doctorAppointment.getStatus().getStatus());
+
+    }
 }
